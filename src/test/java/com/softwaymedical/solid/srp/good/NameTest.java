@@ -8,16 +8,16 @@ import org.junit.Test;
 public class NameTest {
 	@Test
 	public void whenNameHasNoSpacesOrAccent_verifyNameSlugifiedIsSame() {
-		assertThat(new Name("Joao").slugify(), is("Joao"));
+		assertThat(new UserName("Joao").getSlugified(), is("Joao"));
 	}
 
 	@Test
 	public void whenNameHasAccent_verifyNameSlugifiedIsWithoutAccent() {
-		assertThat(new Name("João").slugify(), is("Joao"));
+		assertThat(new UserName("João").getSlugified(), is("Joao"));
 	}
 
 	@Test
 	public void whenNameHasSpace_verifyNameSlugifiedIsWithComaAsSeparator() {
-		assertThat(new Name("Joao the joao").slugify(), is("Joao,the,joao"));
+		assertThat(new UserName("Joao the joao").getSlugified(), is("Joao,the,joao"));
 	}
 }

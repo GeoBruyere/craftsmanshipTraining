@@ -8,11 +8,11 @@ import org.junit.Test;
 public class EmailTest {
 	@Test
 	public void whenMailHasArobase_verifyMailIsValid() {
-		assertThat(new Email("lulu@lulu.pt").validate(), is(true));
+		assertThat(new UserEmail("lulu@lulu.pt").isValid(), is(true));
 	}
 
 	@Test
 	public void whenMailHasNoArobase_verifyMailIsInvalid() {
-		assertThat(new Email("lulululu.pt").validate(), is(false));
+		assertThat(new UserEmail("lulululu.pt").isValid(), is(false));
 	}
 }

@@ -14,15 +14,19 @@ public class User {
 		this.email = email;
 	}
 
-	public boolean checkAge() {
+	public boolean isAgeAboveMajority() {
 		return age >= 18;
 	}
 
-	public String slugifyName() {
+	public String getSlugifiedName() {
 		return normalize(name, NFD).replaceAll("\\p{InCombiningDiacriticalMarks}+", "").replace(" ", ",");
 	}
 
-	public boolean validateEmail() {
+	public boolean isEmailValid() {
 		return email.contains("@");
+	}
+
+	public boolean receiveAlcoolRelatedNewsletter() {
+		return isEmailValid() && isAgeAboveMajority();
 	}
 }

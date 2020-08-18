@@ -8,12 +8,12 @@ import org.junit.Test;
 public class AgeTest {
 	@Test
 	public void whenAgeIsUnder18_verifyAgeCheckingFalse() {
-		assertThat(new Age(12).check(), is(false));
+		assertThat(new UserAge(12).isAboveMajority(), is(false));
 	}
 
 	@Test
 	public void whenAgeIsAboveOrEqualTo18_verifyAgeCheckingtrue() {
-		assertThat(new Age(18).check(), is(true));
-		assertThat(new Age(20).check(), is(true));
+		assertThat(new UserAge(18).isAboveMajority(), is(true));
+		assertThat(new UserAge(20).isAboveMajority(), is(true));
 	}
 }
